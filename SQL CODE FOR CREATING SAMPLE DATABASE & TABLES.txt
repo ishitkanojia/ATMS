@@ -1,0 +1,54 @@
+Create database if not exists ATMS;
+Use ATMS;
+Create table if not exists Destinations ( Flight_Code int(5) primary key,Airline varchar(40), FROM_ varchar(20), TO_ varchar(20), Type_Of_Flight varchar(20),Airport varchar(80));
+insert into destinations values(1,"SpiceJet","Delhi","Mumbai","Domestic","Safdarjung Airport");
+insert into destinations values(2,"Air India","Delhi","New York","International","Indira Gandhi International Airport");
+insert into destinations values(3,"IndiGo","Delhi","Chennai","Domestic","Delhi Airport");
+insert into destinations values(4,"Emirates","Mumbai","Dubai","International","Mumbai International Airport");
+insert into destinations values(5,"Thai Airways","Mumbai","Bangkok","International","Chhatrapati Shivaji Maharaj International Airport");
+insert into destinations values(6,"GoAir","Bengaluru","Delhi","Domestic","Kempegowda International Airport");
+insert into destinations values(7,"Air India","Bengaluru","Lucknow","Domestic","Kempegowda International Airport");
+insert into destinations values(8,"Air India","Chandigarh","Mumbai","Domestic","Shaheed Bhagat Singh International Airport");
+insert into destinations values(9,"Go First","Chandigarh","Bengaluru","Domestic","Shaheed Bhagat Singh International Airport");
+insert into destinations values(10,"Vistara","Lucknow","Delhi","Domestic","Chaudhary Charan Singh International Airport");
+insert into destinations values(11,"SpiceJet","Lucknow","London","International","Chaudhary Charan Singh International Airport");
+insert into destinations values(12,"SpiceJet","Patna","Bengaluru","Domestic","Jay Prakash Narayan International Airport");
+insert into destinations values(13,"Air India","Patna","Washington","International","Jay Prakash Narayan International Airport");
+insert into destinations values(14,"SpiceJet","Srinagar","Paris","International","Srinagar Airport");
+insert into destinations values(15,"Air India","Srinagar","New York","International","Srinagar Airport");
+insert into destinations values(16,"Emirates","Jaipur","Melbourne","International","Jaipur International Airport");
+insert into destinations values(17,"Air India","Jaipur","Cape Town","International","Jaipur International Airport");
+
+Create table if not exists Ticket_Price ( Flight_Code int(5) primary key,Adult int(10), Child int(10), Infant varchar(20));
+insert into ticket_price values(1,5500,4000,"ON LAP");
+insert into ticket_price values(2,60000,40000,"ON LAP");
+insert into ticket_price values(3,5500,4000,"ON LAP");
+insert into ticket_price values(4,18000,15500,"ON LAP");
+insert into ticket_price values(5,14000,11400,"ON LAP");
+insert into ticket_price values(6,6000,5500,"ON LAP");
+insert into ticket_price values(7,5500,4000,"ON LAP");
+insert into ticket_price values(8,6000,4500,"ON LAP");
+insert into ticket_price values(9,7000,6500,"ON LAP");
+insert into ticket_price values(10,3500,3200,"ON LAP");
+insert into ticket_price values(11,40000,37000,"ON LAP");
+insert into ticket_price values(12,7500,6000,"ON LAP");
+insert into ticket_price values(13,65000,60000,"ON LAP");
+insert into ticket_price values(14,48000,44500,"ON LAP");
+insert into ticket_price values(15,51000,46500,"ON LAP");
+insert into ticket_price values(16,70000,65000,"ON LAP");
+insert into ticket_price values(17,75000,69000,"ON LAP");
+
+Create table if not exists Admins ( Admin_Id int(7) primary key, Admin_Name varchar(40), Admin_Age int(7), Admin_Email varchar(80) unique key, Admin_Pwd varchar(40) unique key);
+insert into Admins values(1,"ishit",17,"ikk@p.me","8816");
+insert into Admins values(2,"Priyal",27,"singh.priyal@gmail.com","#0987");
+insert into Admins values(3,"Yugansh",30,"yugansh.india@gmail.com","#4567");
+insert into Admins values(4,"Aalia",32,"aalia765@gmail.com","#7655");
+insert into Admins values(5,"Trisha",26,"trisha.official@gmail.com","#6746");
+
+Create table if not exists Users ( User_Id int(7) primary key, User_Name varchar(40), User_Age int(7), User_Email varchar(80) unique key, User_Pwd varchar(40) unique key, User_Phone varchar(14) unique key);
+insert into Users values(8816,"ishit",17,"ikk@p.me","8816","9013391371");
+insert into Users values(8804,"Nia",40,"nia@gmail.com","nia1947","9487364527");
+
+Create table if not exists Customers (Customer_Id int(7), Customer_Name varchar(40),Customer_Age int(7), Customer_Phone varchar(14), Airline varchar(40), FROM_ varchar(20), TO_ varchar(20), Travel_Class varchar(20), Type_Of_Flight varchar(20), Airport varchar(80),Date varchar(20), Time varchar(20), Ticket_Price int(10));
+insert into customers values(1337,"Guru",20,"9327846345","Air India", "Delhi","New York","Business","International","Indira Gandhi International Airport","03/03/2024","07:30 PM",300000);
+insert into customers values(1337,"Trisha",23,"9327846345","Air India", "Delhi","New York","Business","International","Indira Gandhi International Airport","03/03/2024","07:30 PM",300000);
